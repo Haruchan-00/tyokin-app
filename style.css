@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.screen {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    text-align: center;
+}
+
+#balance {
+    font-size: 52px;
+    font-weight: 800;
+    color: #111;
+    margin: 10px 0 30px 0;
+}
+
+.label { font-size: 14px; color: #888; }
+
+.main-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.main-buttons button {
+    flex: 1;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 14px;
+    color: white;
+    font-weight: 800;
+    border: none;
+}
+
+.btn-income { background-color: #00cc66; box-shadow: 0 4px 0px #00a653; }
+.btn-payment { background-color: #ff5555; box-shadow: 0 4px 0px #d44444; }
+
+.chart-container {
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.section-title { text-align: left; font-size: 16px; color: #666; margin-bottom: 10px; }
+
+.table-wrapper {
+    background: white;
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#historyTable { width: 100%; border-collapse: collapse; }
+#historyTable th { padding: 10px; font-size: 12px; color: #999; border-bottom: 1px solid #eee; }
+#historyTable td { padding: 18px 5px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+
+.amount-plus { color: #00cc66; font-weight: 800; }
+.amount-minus { color: #ff5555; font-weight: 800; }
+
+.undo-btn {
+    background-color: #fff1f1;
+    color: #ff5555;
+    padding: 8px 10px;
+    font-size: 11px;
+    border-radius: 10px;
+    border: 1px solid #ffdbdb;
+    cursor: pointer;
+}
+
+/* 入力画面のデザイン */
+#displayAmount { font-size: 48px; font-weight: 800; margin: 30px 0; }
+
+select {
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    text-align-last: center;
+}
+
+#keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 320px;
+    margin: 25px auto;
+}
+
+#keypad button {
+    height: 75px;
+    font-size: 26px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 4px 0px #ddd;
+}
+
+#keypad .key-c { color: #ff5555; }
+#execBtn { color: white !important; }
+
+.back-btn {
+    background-color: #777;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    width: 140px;
+    height: 55px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+button:active { transform: translateY(2px); box-shadow: none !important; }
