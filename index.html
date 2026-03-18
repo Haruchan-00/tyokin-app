@@ -3,44 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>貯金しよ</title>
-    <meta name="apple-mobile-web-app-title" content="家計簿">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="icon.png">
+    <title>家計簿アプリ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;800&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" href="icon.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="家計簿">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
-
     <div id="homeScreen" class="screen">
         <header>
             <p class="label">現在の貯金額</p>
             <div id="balance">¥0</div>
         </header>
-
         <div class="main-buttons">
-            <button id="incomeBtn" class="btn-income" onclick="openInput('income')">収入</button>
-            <button id="payBtn" class="btn-payment" onclick="openInput('payment')">支払い</button>
+            <button class="btn-income" onclick="window.openInput('income')">収入</button>
+            <button class="btn-payment" onclick="window.openInput('payment')">支払い</button>
         </div>
-
-        <div class="chart-container">
-            <canvas id="balanceChart"></canvas>
-        </div>
-
+        <div class="chart-container"><canvas id="balanceChart"></canvas></div>
         <div id="historySection">
             <h3 class="section-title">最近の履歴</h3>
             <div class="table-wrapper">
                 <table id="historyTable">
-                    <thead>
-                        <tr>
-                            <th>日時</th>
-                            <th>金額</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>日時</th><th>金額</th><th>操作</th></tr></thead>
                     <tbody id="historyBody"></tbody>
                 </table>
             </div>
@@ -49,7 +37,6 @@
 
     <div id="inputScreen" class="screen" style="display:none;">
         <h2 id="screenTitle">入力</h2>
-        
         <div id="methodSelectGroup">
             <select id="cardSelect">
                 <option value="現金">現金</option>
@@ -58,29 +45,24 @@
                 <option value="Suica">Suica</option>
             </select>
         </div>
-
         <div id="displayAmount">¥0</div>
-
         <div id="keypad">
-            <button type="button" onclick="addNumber(1)">1</button>
-            <button type="button" onclick="addNumber(2)">2</button>
-            <button type="button" onclick="addNumber(3)">3</button>
-            <button type="button" onclick="addNumber(4)">4</button>
-            <button type="button" onclick="addNumber(5)">5</button>
-            <button type="button" onclick="addNumber(6)">6</button>
-            <button type="button" onclick="addNumber(7)">7</button>
-            <button type="button" onclick="addNumber(8)">8</button>
-            <button type="button" onclick="addNumber(9)">9</button>
-            <button type="button" onclick="clearAmount()" class="key-c">C</button>
-            <button type="button" onclick="addNumber(0)">0</button>
-            <button type="button" id="execBtn" onclick="confirmProcess()">確定</button>
+            <button onclick="window.addNumber(1)">1</button>
+            <button onclick="window.addNumber(2)">2</button>
+            <button onclick="window.addNumber(3)">3</button>
+            <button onclick="window.addNumber(4)">4</button>
+            <button onclick="window.addNumber(5)">5</button>
+            <button onclick="window.addNumber(6)">6</button>
+            <button onclick="window.addNumber(7)">7</button>
+            <button onclick="window.addNumber(8)">8</button>
+            <button onclick="window.addNumber(9)">9</button>
+            <button onclick="window.clearAmount()" class="key-c">C</button>
+            <button onclick="window.addNumber(0)">0</button>
+            <button id="execBtn" onclick="window.confirmProcess()">確定</button>
         </div>
-
-        <div class="action-buttons">
-            <button type="button" onclick="closeInput()" class="back-btn">戻る</button>
-        </div>
+        <div class="action-buttons"><button onclick="window.closeInput()" class="back-btn">戻る</button></div>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
